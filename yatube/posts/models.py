@@ -46,3 +46,23 @@ class Post(models.Model):
         ordering = ['-pub_date']
         verbose_name_plural = 'Посты'
         verbose_name = 'Пост'
+
+
+class Calc(models.Model):
+    ammount = models.IntegerField(
+        verbose_name='Значение'
+    )
+    comment = models.CharField(
+        max_length=100,
+        verbose_name='Коментарий'
+    )
+    date = models.DateField(
+        auto_now_add=False,
+        verbose_name='Дата'
+    )
+
+    class Meta:
+        verbose_name_plural = 'Значения'
+
+    def __str__(self):
+        return self.comment

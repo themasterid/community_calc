@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+Калькулятор
+{% endblock %}
+{% block content %}
+{{ text }}
+{{ posts.ammount }}
+{% for post in posts %}
+    <hr>
+    <p>Отчет на: {{ post.date }}</p>
+  <ul>
+    <li>
+      Значение: {{ post.ammount }}
+    </li>
+    <li>
+      Комментарий: {{ post.comment }}
+    </li>
+    <li>
+      Дата: {{ post.date }}
+    </li>
+  </ul>
+{% endfor %}
+{% endblock %}

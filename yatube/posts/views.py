@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, render
+from django.http import HttpResponse
 
-from .models import Group, Post
+from .models import Group, Post, Calc
 
 
 def index(request):
@@ -17,5 +18,16 @@ def group_posts(request, slug):
     context = {
         'group': group,
         'posts': posts
+    }
+    return render(request, template, context)
+
+
+def calc(request):
+    template = 'posts/calc.html'
+    posts = Calc.objects.all()
+    text = 'Тут будет калькулятор'
+    context = {
+        'text': text,
+        'posts': posts,
     }
     return render(request, template, context)

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Group, Post
+from .models import Group, Post, Calc
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -17,5 +17,16 @@ class PostAdmin(admin.ModelAdmin):
     empty_value_display = '-пусто-'
 
 
+class CalcAdmin(admin.ModelAdmin):
+    list_display = (
+        'pk',
+        'ammount',
+        'text',
+        'pub_date',
+    )
+    empty_value_display = '-пусто-'
+
+
 admin.site.register(Post, PostAdmin)
 admin.site.register(Group)
+admin.site.register(Calc)

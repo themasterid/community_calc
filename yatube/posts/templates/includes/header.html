@@ -1,20 +1,17 @@
 {% load static %}
 <header>
-  <nav class="navbar navbar-light" style="background-color: black;">
+  <nav class="navbar navbar-dark" role="navigation" style="background-color: black;">
     <div class="container">
-      <a class="navbar-brand" href="{% url 'posts:main' %}">
+      <a class="navbar-brand" href="{% url 'posts:index' %}">
         <img src="{% static 'img/logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
         <span style="color:red">My</span><span style="color:white">Blog</span>
       </a>
+      <a class="navbar-brand" href="{% url 'calc:calc' %}">        
+        <span style="color:red">Каль</span><span style="color:white">кулятор</span>
+      </a>
+      <a class="navbar-brand align-left" href="admin/">        
+        <span style="color:red">Адми</span><span style="color:white">нка</span>
+      </a>
     </div>
   </nav>
-  <div class="widget">
-    <h3 class="widget-title">Меню</h3>
-    <ul class="widget-list">
-      <li><a href="{% url 'posts:main' %}">Главная</a></li>
-      <li><a href="admin/">Админка</a></li>
-      <li><a href="{% url 'calc:calc_list' %}">Калькулятор</a></li>
-      <li><a href="{% url 'posts:main' %}">Посты</a></li>
-    </ul>
-  </div>
 </header>

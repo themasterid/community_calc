@@ -59,15 +59,15 @@ def get_calories_remained():
     return 'Хватит есть!'
 
 
-def calc(request):
+def calculator(request):
     massege_money = get_today_cash_remained()
     massege_calories = get_calories_remained()
 
     today_stat = get_today_stats()
     week_stat = get_week_stats()
-    template = 'calc/calc.html'
+    template = 'calc/calculator.html'
     posts = Bb.objects.order_by('-published')
-    text = 'Тут будет калькулятор'
+    text = 'Калькулятор денег и калорий'
     context = {
         'text': text,
         'posts': posts,

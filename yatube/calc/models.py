@@ -15,5 +15,10 @@ class Bb(models.Model):
         db_index=False,
         verbose_name='Опубликовано')
 
+    def __str__(self):
+        return self.comment
+
     class Meta:
         ordering = ['-published']
+        verbose_name_plural = 'Записи'
+        verbose_name = 'Запись'

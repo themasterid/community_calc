@@ -1,12 +1,12 @@
-{% extends "calc/calc.html" %}
+{% extends "calc/calculator.html" %}
 
-{% block title %}Добавление объявления{% endblock %}
+{% block title %}Добавить запись в базу{% endblock %}
 
 {% block content %}
-<h2>Добавление объявления</h2>
-<form method="post" class='content_textDiv'>
+<h2>Добавить запись в базу</h2>
+<form method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form }}
     <input type="submit" value="Добавить">
 </form>
 {% endblock %}

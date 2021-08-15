@@ -20,6 +20,10 @@ class Group(models.Model):
 
 
 class Post(models.Model):
+    text_title = models.CharField(
+        max_length=50,
+        verbose_name='Заголовок'
+    )
     text = models.TextField(
         max_length=400,
         verbose_name='Текст'
@@ -42,27 +46,10 @@ class Post(models.Model):
         related_name='posts'
     )
 
+    def __str__(self):
+        return self.text[:15]
+
     class Meta:
         ordering = ['-pub_date']
         verbose_name_plural = 'Посты'
         verbose_name = 'Пост'
-
-
-class Calc(models.Model):
-    ammount = models.IntegerField(
-        verbose_name='Значение'
-    )
-    comment = models.CharField(
-        max_length=100,
-        verbose_name='Коментарий'
-    )
-    date = models.DateField(
-        auto_now_add=False,
-        verbose_name='Дата'
-    )
-
-    class Meta:
-        verbose_name_plural = 'Значения'
-
-    def __str__(self):
-        return self.comment

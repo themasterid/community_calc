@@ -1,4 +1,5 @@
 # posts/urls.py
+from calc.views import calc # , get_name
 from django.urls import path
 
 from . import views
@@ -6,7 +7,6 @@ from . import views
 app_name = 'posts'
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.index, name='main'),
     path('group/<slug:slug>/', views.group_posts, name='group_list'),
-    path('calc/', views.calc, name='calc')
 ]

@@ -1,5 +1,4 @@
 from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponse
 
 from .models import Group, Post
 
@@ -17,6 +16,5 @@ def group_posts(request, slug):
     posts = group.posts.all()[:10]
     context = {
         'group': group,
-        'posts': posts
-    }
+        'posts': posts}
     return render(request, template, context)

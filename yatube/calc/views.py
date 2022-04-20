@@ -1,11 +1,11 @@
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
-from .models import Bb
-from django.views.generic.edit import CreateView
-from .forms import BbForm
-from django.urls import reverse_lazy
-
 import datetime as dt
+
+from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views.generic.edit import CreateView
+
+from .forms import BbForm
+from .models import Bb
 
 limit = 1000
 USD_RATE = 72.0
@@ -37,8 +37,7 @@ def get_today_cash_remained(currency='rub'):
     money: dict = {
         'rub': (RUB_RATE, 'руб'),
         'usd': (USD_RATE, 'USD'),
-        'eur': (EURO_RATE, 'Euro')
-    }
+        'eur': (EURO_RATE, 'Euro')}
     if currency not in money:
         return '<выбрана неверная валюта>'
     limit_today = get_limit_today()
